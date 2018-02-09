@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+<title> Score Keeper </title>
+<link rel="stylesheet" type="text/css" href="scorekeeper.css">
+<script src="scorekeeper.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- Blue Team Area -->
+<div class="teams" id="BlueTeam">
+<h2 class="teamnames" id="bluename">Blue</h2>
+<h1 id="bluescore">0</h1>
+<button class="bluebuttons" id="blue+1" onclick="score(1,'blue')"> +1 </button>
+<button class="bluebuttons" id="blue+2" onclick="score(2,'blue')"> +2 </button>
+<button class="bluebuttons" id="blue+3" onclick="score(3,'blue')"> +3 </button>
+<br>
+<button class="bluebuttons2" id="blue-1" onclick="score(-1,'blue')"> -1 </button>
+<button class="bluebuttons2" id="blue-2" onclick="score(-2,'blue')"> -2 </button>
+<button class="bluebuttons2" onclick="score('?','blue')"> +? </button>
+<br>
+<div id="B6" style="display: show;">
+<p> 6 Things </p>
+<input type="checkbox" id="checkbox1">
+<input type="checkbox" id="checkbox2">
+<input type="checkbox" id="checkbox3"><br>
+<input type="checkbox" id="checkbox4">
+<input type="checkbox" id="checkbox5">
+<input type="checkbox" id="checkbox6">
+</div>
+<div id="BT" style="display: none;">
+ <p> Other Things Games </p>
+ <p id="btscore">0</p>
+ <button onclick="score(1,'bt')">+1</button>
+ <button onclick="score(2,'bt')">+2</button>
+ <button onclick="score(-1,'bt')">-1</button>
+</div>
+<br><br>
+<button onclick="resetScore('blue')"> Reset Score </button>
+<button onclick="changeName('blue')"> Change Name </button>
+<button onclick="changeColor('Left', '?')"> Change Color </button>
+</div>
+
+<!-- Red Team Area -->
+<div class="teams" id="RedTeam">
+<h2 class="teamnames" id="redname">Red</h2>
+<h1 id="redscore">0</h1>
+<button class ="redbuttons" id="red+1" onclick="score(1,'red')"> +1 </button> 
+<button class ="redbuttons" id="red+2" onclick="score(2,'red')"> +2 </button>
+<button class ="redbuttons" id="red+3" onclick="score(3,'red')"> +3 </button>
+<br>
+<button class ="redbuttons2" id="red-1" onclick="score(-1,'red')"> -1 </button>
+<button class ="redbuttons2" id="red-2" onclick="score(-2,'red')"> -2 </button>
+<button class ="redbuttons2" onclick="score('?','red')"> +? </button>
+<br>
+<div id="R6" style="display: show;">
+ <p> 6 Things </p>
+ <input type="checkbox" id="checkbox7">
+ <input type="checkbox" id="checkbox8">
+ <input type="checkbox" id="checkbox9"><br>
+ <input type="checkbox" id="checkbox10">
+ <input type="checkbox" id="checkbox11">
+ <input type="checkbox" id="checkbox12">
+</div>
+<div id="RT" style="display: none;">
+<p> Other Things Games </p>
+ <p id="rtscore">0</p>
+ <button onclick="score(1,'rt')">+1</button>
+ <button onclick="score(2,'rt')">+2</button>
+ <button onclick="score(-1,'rt')">-1</button>
+</div>
+<br><br>
+<button onclick="resetScore('red')"> Reset Score </button>
+<button onclick="changeName('red')"> Change Name </button>
+<button onclick="changeColor('Right', '?')"> Change Color </button>
+</div>
+
+<!-- Loyal Fans Area -->
+<div class = "teams" id="loyalfans">
+<h2 id="lfname">Purple</h2>
+<h2 id="lfscore"> 0 </h2>
+<button id="red+1" onclick="score(1,'lf')"> +1 </button>
+<button id="red+2" onclick="score(2,'lf')"> +2 </button>
+<button id="red-1" onclick="score(-1,'lf')"> -1 </button>
+<button id="red-2" onclick="score(-2,'lf')"> -2 </button>
+<br>
+<button onclick="changeName('lf')"> Change Name </button>
+</div>
+<!-- Other Buttons -->
+<button id="togglelf" onclick="toggleLF()">Hide</button>
+<button id="resetall" onclick="resetScore('all')">Reset All</button>
+<button id="otherthings" onclick="switchShow()">Other Things</button>
+</body>
+</HTML>

@@ -39,12 +39,12 @@ height: 50px;
 top: 68%;
 }
 #otherthings {
-	position: absolute;
+	position: relative;
 	margin: auto;
-	left: 47.5%;
+	left: 42%;
 	width: 100px;
 	height: 50px;
-	top: 55%;
+	top: -200px;
 }
 .teamnames {
 width: 100%;

@@ -12,7 +12,7 @@ window.onload = function() {
 		somethingLF();
 		console.log("Loaded saved variables from localStorage.")
 	} else {
-	    localStorage.bluename = "Overland Raiders";
+	    localStorage.bluename = "Mountain Bluebirds";
 	    localStorage.redname = "Boise Spuds";
 		localStorage.lfname = "Loyal Fans";
         localStorage.bluescore = 0;

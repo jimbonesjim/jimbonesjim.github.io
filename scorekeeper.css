@@ -1,6 +1,7 @@
 .teams {
 Width: 50%;
 text-align: center;
+text-transform:capitalize;
 color: white;
 border: 2px;
 }

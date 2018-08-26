@@ -154,7 +154,7 @@ function switchShow(){
 //changes the name for the teams
 function changeName(team) {
     if(team == "blue"){
-	var btn = prompt("Set Blue Team Name", "Emerald St Wizards");
+	var btn = prompt("Set Blue Team Name", "Mountain Bluebirds");
 	if (btn == null){
 	return;
 	}

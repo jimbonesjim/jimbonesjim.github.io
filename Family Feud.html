@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+        
+        <title>Family Feud Remake</title>
+        
+        <style>
+            
+            #main {
+                position: relative;
+            }
+            
+            .answerBox {
+                width: 47%;
+                height: 65px;
+                border: 2.5px solid blue;
+                margin-right: 1%;
+                margin-left: 1%;
+                margin-bottom: 2%;
+                float: left;
+                background: Aqua;
+            }
+            .answerText, #questionText{
+                /*display: none;*/
+                text-align: center;
+            }
+            
+            .wrongAnswer {
+                width: 100%;
+                position: absolute;
+                color: red;
+                font-size: 100px;
+                text-align: center;
+            }
+            
+            #wrongAnswerButton{
+                float: left;
+                width: 5%;
+                border-radius: 50%;
+                background: red;
+                text-align: center;
+            }
+            
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script>
+            
+            var wrong = 0;
+            
+            $(document).ready(function() {
+                              
+                $('.answerText').hide();
+                $('#questionText').hide();
+                $('.wrongAnswer').hide();
+                
+                $('#wrongAnswerButton').click(function(){
+                    wrong++;
+                    if(wrong == 1){
+                        $('.wrongAnswer').css("margin-right", "40%");
+                        $('#wrongAnswer1').show().delay(1000).queue(function(next) {
+                           $('#wrongAnswer1').hide();
+                            next();
+                        });
+                    } else if (wrong == 2){
+                         $('.wrongAnswer').css("margin-right", "20%");
+                        $('#wrongAnswer2').show().delay(1000).queue(function(next) {
+                           $('#wrongAnswer2').hide();
+                            next();
+                        });
+                    } else if (wrong == 3){
+                         $('.wrongAnswer').css("margin-right", "10%");
+                        $('#wrongAnswer3').show().delay(1000).queue(function(next) {
+                           $('#wrongAnswer3').hide();
+                            next();
+                        });
+                        wrong = 0;
+                    } else {
+                        $('.wrongAnswer').hide();
+                        wrong = 0;
+                    }
+                });
+                
+                $('.answerBox').each(function(){
+                    $(this).click(function(){
+                        $(this).children().toggle();
+                    })
+                })
+                
+                              });
+            
+            $(document).on('keydown', function(e) {
+                if (e.shiftKey){
+                    switch (String.fromCharCode(e.which).toLowerCase()) {
+                        case '1':
+                            $('#answerText1').toggle();
+                            break;
+                        case '2':
+                            $('#answerText3').toggle();
+                            break;
+                        case '3':
+                            $('#answerText5').toggle();
+                            break;
+                        case '4':
+                            $('#answerText7').toggle();
+                            break;
+                        case '5':
+                            $('#answerText2').toggle();
+                            break;
+                        case '6':
+                            $('#answerText4').toggle();
+                            break;
+                        case '7':
+                            $('#answerText6').toggle();
+                            break;
+                        case '8':
+                            $('#answerText8').toggle();
+                            break;
+                        case '9':
+                            wrong ++;
+                            
+                            $('.wrongAnswer').hide();
+                            
+                            switch (wrong) {
+                                    
+                                case 1:
+                                    $('.wrongAnswer').css("margin-right", "40%");
+                                    $('#wrongAnswer1').show().delay(1000).queue(function(next) {
+                                        $('#wrongAnswer1').hide();
+                                        next();
+                                    })
+                                    break;
+                                case 2:
+                                    $('.wrongAnswer').css("margin-right", "20%");
+                                    $('#wrongAnswer2').show().delay(1000).queue(function(next) {
+                                        $('#wrongAnswer2').hide();
+                                        next();
+                                    })
+                                    break;
+                                case 3:
+                                    $('.wrongAnswer').css("margin-right", "10%");
+                                    $('#wrongAnswer3').show().delay(1000).queue(function(next) {
+                                        $('#wrongAnswer3').hide();
+                                        wrong = 0;
+                                        next();
+                                    })
+                                    break;
+                            }
+                            break;
+                            
+                        case '0':
+                            $('#questionText').toggle();
+                    }
+                }
+            })
+            
+        </script>
+        
+	</head>
+	
+	<body>
+        
+        <div id="main">
+            <div class="wrongAnswer" id="wrongAnswer1">
+                <h1>X</h1>
+            </div>
+            <div class="wrongAnswer" id="wrongAnswer2">
+                <h1>X X</h1>
+            </div>
+            <div class="wrongAnswer" id="wrongAnswer3">
+                <h1>X X X</h1>
+            </div>
+            <div id="Question">
+                <h1 id="questionText">Name a reason you might get rid of an old family heirloom.</h1>
+            </div>
+
+            <div class="answerBox" id="answer1">
+                <h2 class="answerText" id="answerText1">Broken   29</h2>
+            </div>
+
+            <div class="answerBox" id="answer2">
+                <h2 class="answerText" id="answerText2">Too much stuff  10</h2>
+            </div>
+
+            <div class="answerBox" id="answer3">
+                <h2 class="answerText" id="answerText3">Ugly  22</h2>
+            </div>
+
+            <div class="answerBox" id="answer4">
+                <h2 class="answerText" id="answerText4">Family Feud  5</h2>
+            </div>
+
+            <div class="answerBox" id="answer5">
+                <h2 class="answerText" id="answerText5">Divorce  18</h2>
+            </div>
+
+            <div class="answerBox" id="answer6">
+                <h2 class="answerText" id="answerText6">Moving  2</h2>
+            </div>
+
+            <div class="answerBox" id="answer7">
+                <h2 class="answerText" id="answerText7">Sell / Need money  12</h2>
+            </div>
+
+            <div class="answerBox" id="answer8">
+                <h2 class="answerText" id="answerText8">0</h2>
+            </div>
+            
+            <div id="wrongAnswerButton">
+                <h1>X</h1>
+            </div>
+        </div>
+        
+        
+	</body>
+</HTML>

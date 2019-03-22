@@ -40,6 +40,7 @@ function win(userChoice, computerChoice) {
 
 	const userChoice_div = document.getElementById(userChoice);
 	userScore++;
+	numberOfGames++;
 	userScore_span.innerHTML = userScore;
 	computerScore_span.innerHTML = computerScore;
 	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`;
@@ -53,6 +54,7 @@ function lose(userChoice, computerChoice) {
 
 	const userChoice_div = document.getElementById(userChoice);
 	computerScore++;
+	numberOfGames++;
 	userScore_span.innerHTML = userScore;
 	computerScore_span.innerHTML = computerScore;
 	result_p.innerHTML = `${convertToWord(computerChoice)}${smallCompWord} beats ${convertToWord(userChoice)}${smallUserWord}. You lost...`;
@@ -65,6 +67,7 @@ function lose(userChoice, computerChoice) {
 function draw(userChoice) {
 
 	const userChoice_div = document.getElementById(userChoice);
+	numberOfGames++;
 	result_p.innerHTML = `You both picked ${convertToWord(userChoice)}. It's a draw.`;
 	drawSound.play();
 	userChoice_div.classList.add('yellow-glow');
@@ -92,7 +95,6 @@ function game(userChoice, computerChoice){
 			break;
 	}
 
-	numberOfGames++;
 	numberOfGames_span.innerHTML = numberOfGames;
 
 }

@@ -92,6 +92,10 @@ header > h1 {
 	transition: all 0.35s ease;
 }
 
+#rd {
+	color: white;
+}
+
 .choice:hover {
 	cursor: pointer;
 	background: #513E46;

@@ -9,6 +9,7 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const random_div = document.getElementById("rd");
 const soundtoggle_div = document.getElementById("toggle-sound");
 const smallUserWord = "user".fontsize(2.5).sub();
 const smallCompWord = "comp".fontsize(2.5).sub();
@@ -96,7 +97,7 @@ function game(userChoice, computerChoice){
 
 }
 
-function toggleSound(){
+function toggleSound() {
 
 	if (!muted) {
 		muted = true;
@@ -113,13 +114,23 @@ function toggleSound(){
 	}
 }
 
+function doAThousandGames() {
+
+	i = 0;
+	while (i < 1000) {
+		game(getComputerChoice(),getComputerChoice());
+		i++;
+	}
+
+}
+
 function main() {
 
 	rock_div.addEventListener('click', () => game("r", getComputerChoice()));
 	paper_div.addEventListener('click', () => game("p", getComputerChoice()));
 	scissors_div.addEventListener('click', () => game("s", getComputerChoice()));
+	random_div.addEventListener('click', () => game(getComputerChoice(), getComputerChoice()));
 	soundtoggle_div.addEventListener('click', () => toggleSound());
-
 }
 
 main();

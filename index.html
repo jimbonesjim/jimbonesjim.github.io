@@ -10,15 +10,15 @@
 
   <!-- Blue Team Area -->
   <div class="teams" id="BlueTeam">
-  <h2 class="teamnames" id="bluename">Blue</h2>
+  <h2 class="teamnames" id="bluename">Left</h2>
   <h1 id="bluescore">0</h1>
-  <button class="bluebuttons" id="blue+1" onclick="score(1,'blue')"> +1 </button>
-  <button class="bluebuttons" id="blue+2" onclick="score(2,'blue')"> +2 </button>
-  <button class="bluebuttons" id="blue+3" onclick="score(3,'blue')"> +3 </button>
+  <button class="bluebuttons" id="blue+1" onclick="score(1,'left')"> +1 </button>
+  <button class="bluebuttons" id="blue+2" onclick="score(2,'left')"> +2 </button>
+  <button class="bluebuttons" id="blue+3" onclick="score(3,'left')"> +3 </button>
   <br>
-  <button class="bluebuttons2" id="blue-1" onclick="score(-1,'blue')"> -1 </button>
-  <button class="bluebuttons2" id="blue-2" onclick="score(-2,'blue')"> -2 </button>
-  <button class="bluebuttons2" onclick="score('?','blue')"> +? </button>
+  <button class="bluebuttons2" id="blue-1" onclick="score(-1,'left')"> -1 </button>
+  <button class="bluebuttons2" id="blue-2" onclick="score(-2,'left')"> -2 </button>
+  <button class="bluebuttons2" onclick="score('?','left')"> +? </button>
   <br>
   <div id="B6" style="display: show;">
   <p> 6 Things </p>
@@ -32,27 +32,27 @@
   <div id="BT" style="display: none;">
    <p> Other Things Games </p>
    <p id="btscore">0</p>
-   <button onclick="score(1,'bt')">+1</button>
-   <button onclick="score(2,'bt')">+2</button>
-   <button onclick="score(-1,'bt')">-1</button>
+   <button onclick="score(1,'lt')">+1</button>
+   <button onclick="score(2,'lt')">+2</button>
+   <button onclick="score(-1,'lt')">-1</button>
   </div>
   <br><br>
-  <button onclick="resetScore('blue')"> Reset Score </button>
-  <button onclick="changeName('blue')"> Change Name </button>
-  <button onclick="changeColor('Left', '?')"> Change Color </button>
+  <button onclick="resetScore('left')"> Reset Score </button>
+  <button onclick="changeName('left')"> Change Name </button>
+  <button onclick="changeColor('left', '?')"> Change Color </button>
   </div>
 
   <!-- Red Team Area -->
   <div class="teams" id="RedTeam">
-  <h2 class="teamnames" id="redname">Red</h2>
+  <h2 class="teamnames" id="redname">Right</h2>
   <h1 id="redscore">0</h1>
-  <button class ="redbuttons" id="red+1" onclick="score(1,'red')"> +1 </button> 
-  <button class ="redbuttons" id="red+2" onclick="score(2,'red')"> +2 </button>
-  <button class ="redbuttons" id="red+3" onclick="score(3,'red')"> +3 </button>
+  <button class ="redbuttons" id="red+1" onclick="score(1,'right')"> +1 </button> 
+  <button class ="redbuttons" id="red+2" onclick="score(2,'right')"> +2 </button>
+  <button class ="redbuttons" id="red+3" onclick="score(3,'right')"> +3 </button>
   <br>
-  <button class ="redbuttons2" id="red-1" onclick="score(-1,'red')"> -1 </button>
-  <button class ="redbuttons2" id="red-2" onclick="score(-2,'red')"> -2 </button>
-  <button class ="redbuttons2" onclick="score('?','red')"> +? </button>
+  <button class ="redbuttons2" id="red-1" onclick="score(-1,'right')"> -1 </button>
+  <button class ="redbuttons2" id="red-2" onclick="score(-2,'right')"> -2 </button>
+  <button class ="redbuttons2" onclick="score('?','right')"> +? </button>
   <br>
   <div id="R6" style="display: show;">
    <p> 6 Things </p>
@@ -71,26 +71,25 @@
    <button onclick="score(-1,'rt')">-1</button>
   </div>
   <br><br>
-  <button onclick="resetScore('red')"> Reset Score </button>
-  <button onclick="changeName('red')"> Change Name </button>
-  <button onclick="changeColor('Right', '?')"> Change Color </button>
+  <button onclick="resetScore('right')"> Reset Score </button>
+  <button onclick="changeName('right')"> Change Name </button>
+  <button onclick="changeColor('right', '?')"> Change Color </button>
   </div>
 
   <!-- Loyal Fans Area -->
   <div class = "teams" id="loyalfans">
   <h2 id="lfname">Purple</h2>
   <h2 id="lfscore"> 0 </h2>
-  <button id="red+1" onclick="score(1,'lf')"> +1 </button>
-  <button id="red+2" onclick="score(2,'lf')"> +2 </button>
-  <button id="red-1" onclick="score(-1,'lf')"> -1 </button>
-  <button id="red-2" onclick="score(-2,'lf')"> -2 </button>
+  <button id="red+1" onclick="score(1,'fans')"> +1 </button>
+  <button id="red+2" onclick="score(2,'fans')"> +2 </button>
+  <button id="red-1" onclick="score(-1,'fans')"> -1 </button>
+  <button id="red-2" onclick="score(-2,'fans')"> -2 </button>
   <br>
-  <button onclick="changeName('lf')"> Change Name </button>
+  <button onclick="changeName('fans')"> Change Name </button>
   </div>
   <!-- Other Buttons -->
   <button id="togglelf" onclick="toggleLF()">Hide</button>
   <button id="resetall" onclick="resetScore('all')">Reset All</button>
   <button id="otherthings" onclick="switchShow()">Other Things</button>
-   <p style="position:fixed;">V 1.0.0.1</p>
  </body>
 </HTML>

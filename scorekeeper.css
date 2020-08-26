@@ -33,11 +33,11 @@
 }
 #resetall {
 	clear: both;
-	position: fixed;
+	position: absolute;
 	left: 44.8%;
 	width: 10.5%;
 	height: 50px;
-	bottom: 5px;
+	top: 777px;
 }
 #otherthings {
 	position: absolute;

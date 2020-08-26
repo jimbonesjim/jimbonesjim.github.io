@@ -203,7 +203,6 @@ function changeColor(team, color) {
 	if (team == "left") {
 		if (color == '?'){
 		color = prompt("What Color would you like the " + team + " team to be", "blue");
-		left.color = color;
 		} else {
 			color = left.color;
 		}
@@ -214,10 +213,10 @@ function changeColor(team, color) {
 			KEEPBUTTONSBLACK()
 		}
 		document.getElementById("BlueTeam").style.backgroundColor = color;
+		left.color = color;
 	} else if (team == "right") {
 		if (color == '?'){
 		color = prompt("What Color would you like the " + team + " team to be", "red");
-		right.color = color;
 		} else {
 			color = right.color;
 		}
@@ -228,6 +227,7 @@ function changeColor(team, color) {
 			KEEPBUTTONSBLACK()
 		}
 		document.getElementById("RedTeam").style.backgroundColor = color;
+		right.color = color;
 	}
 	console.log("Changed the " + team + " team color to " + color);
     save();

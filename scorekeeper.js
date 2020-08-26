@@ -37,8 +37,8 @@ window.onload = function() {
     somethingLF();
     save();
 	KEEPBUTTONSBLACK();
-	changeColor("Left", left.color);
-	changeColor("Right", right.color);
+	changeColor("left", left.color);
+	changeColor("right", right.color);
 	console.log("Finished starting.");
 	}
 

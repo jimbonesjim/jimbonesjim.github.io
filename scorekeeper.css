@@ -89,15 +89,15 @@
   width: 20%;
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 40%;
 }
 
 #togglelf {
   position: absolute;
   top: 0;
-  height: 2.5em;
-  width: 5%;
-  left: 47.5%;
+  height: 35px;
+  width: 4%;
+  left: 48%;
 }
 
 #resetall {

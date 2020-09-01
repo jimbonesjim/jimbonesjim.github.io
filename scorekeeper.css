@@ -65,19 +65,19 @@
 }
 
 @media (max-width: 1400px) {
-  #flex .teamnames {
+  .teamnames {
     font-size: 1.5rem;
   }
 }
 
 @media (max-width: 1000px) {
-  #flex .teamnames {
+  .teamnames {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 700px) {
-  #flex .teamnames {
+  .teamnames {
     font-size: 0.5rem;
   }
 }
@@ -90,6 +90,10 @@
   position: absolute;
   top: 0;
   left: 40%;
+}
+
+#lfname {
+  font-size: 2rem;
 }
 
 #togglelf {

@@ -59,7 +59,7 @@
   height: 25px;
 }
 
-#flex .teamnames {
+.teamnames {
   font-size: 2.5rem;
   width: 100%;
 }
@@ -86,10 +86,10 @@
   zoom: 1.5;
   background: purple;
   opacity: 0.85;
-  width: 25%;
+  width: 20%;
   position: absolute;
   top: 0;
-  left: 37.5%;
+  left: 30%;
 }
 
 #togglelf {

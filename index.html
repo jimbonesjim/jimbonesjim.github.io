@@ -3,9 +3,8 @@
   <head>
     <title>Score Keeper</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <!--<link rel="stylesheet" type="text/css" href="scorekeeper.css">-->
     <link rel="stylesheet" type="text/css" href="./scorekeeper.css" />
-    <script src="scorekeeper.js"></script>
+    <script src="scorekeeper.js" defer></script>
   </head>
   <body>
     <div id="main">
@@ -111,10 +110,10 @@
       <div class="teams" id="loyalfans">
         <h2 id="lfname">Purple</h2>
         <h2 id="lfscore">0</h2>
-        <button id="right+1" onclick="score(1,'fans')">+1</button>
-        <button id="right+2" onclick="score(2,'fans')">+2</button>
-        <button id="right-1" onclick="score(-1,'fans')">-1</button>
-        <button id="right-2" onclick="score(-2,'fans')">-2</button>
+        <button id="fans+1" onclick="score(1,'fans')">+1</button>
+        <button id="fans+2" onclick="score(2,'fans')">+2</button>
+        <button id="fans-1" onclick="score(-1,'fans')">-1</button>
+        <button id="fans-2" onclick="score(-2,'fans')">-2</button>
         <br />
         <button onclick="changeName('fans')">Change Name</button>
       </div>

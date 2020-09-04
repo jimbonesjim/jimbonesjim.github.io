@@ -10,29 +10,29 @@
   <body>
     <div id="main">
       <div id="flex">
-        <!-- Blue Team Area -->
+        <!-- Left Team Area -->
         <div class="teams" id="LeftTeam">
-          <h2 class="teamnames" id="bluename">Left</h2>
-          <h1 id="bluescore">0</h1>
-          <button class="leftButtons" id="blue+1" onclick="score(1,'left')">
+          <h2 class="teamnames" id="leftname">Left</h2>
+          <h1 id="leftscore">0</h1>
+          <button class="leftButtons" id="left+1" onclick="score(1,'left')">
             +1
           </button>
-          <button class="leftButtons" id="blue+2" onclick="score(2,'left')">
+          <button class="leftButtons" id="left+2" onclick="score(2,'left')">
             +2
           </button>
-          <button class="leftButtons" id="blue+3" onclick="score(3,'left')">
+          <button class="leftButtons" id="left+3" onclick="score(3,'left')">
             +3
           </button>
           <br />
-          <button class="leftButtons2" id="blue-1" onclick="score(-1,'left')">
+          <button class="leftButtons2" id="left-1" onclick="score(-1,'left')">
             -1
           </button>
-          <button class="leftButtons2" id="blue-2" onclick="score(-2,'left')">
+          <button class="leftButtons2" id="left-2" onclick="score(-2,'left')">
             -2
           </button>
           <button class="leftButtons2" onclick="score('?','left')">+?</button>
           <br />
-          <div id="B6" style="display: show">
+          <div id="L6" style="display: show">
             <p>6 Things</p>
             <input type="checkbox" id="checkbox1" />
             <input type="checkbox" id="checkbox2" />
@@ -41,9 +41,9 @@
             <input type="checkbox" id="checkbox5" />
             <input type="checkbox" id="checkbox6" />
           </div>
-          <div id="BT" style="display: none">
+          <div id="LT" style="display: none">
             <p>Other Things Games</p>
-            <p id="btscore">0</p>
+            <p id="ltscore">0</p>
             <button onclick="score(1,'lt')">+1</button>
             <button onclick="score(2,'lt')">+2</button>
             <button onclick="score(-1,'lt')">-1</button>
@@ -54,24 +54,32 @@
           <button onclick="changeColor('left', '?')">Change Color</button>
         </div>
 
-        <!-- Red Team Area -->
+        <!-- Right Team Area -->
         <div class="teams" id="RightTeam">
-          <h2 class="teamnames" id="redname">Right</h2>
-          <h1 id="redscore">0</h1>
-          <button class="rightButtons" id="red+1" onclick="score(1,'right')">
+          <h2 class="teamnames" id="rightname">Right</h2>
+          <h1 id="rightscore">0</h1>
+          <button class="rightButtons" id="right+1" onclick="score(1,'right')">
             +1
           </button>
-          <button class="rightButtons" id="red+2" onclick="score(2,'right')">
+          <button class="rightButtons" id="right+2" onclick="score(2,'right')">
             +2
           </button>
-          <button class="rightButtons" id="red+3" onclick="score(3,'right')">
+          <button class="rightButtons" id="right+3" onclick="score(3,'right')">
             +3
           </button>
           <br />
-          <button class="rightButtons2" id="red-1" onclick="score(-1,'right')">
+          <button
+            class="rightButtons2"
+            id="right-1"
+            onclick="score(-1,'right')"
+          >
             -1
           </button>
-          <button class="rightButtons2" id="red-2" onclick="score(-2,'right')">
+          <button
+            class="rightButtons2"
+            id="right-2"
+            onclick="score(-2,'right')"
+          >
             -2
           </button>
           <button class="rightButtons2" onclick="score('?','right')">+?</button>
@@ -101,12 +109,12 @@
 
       <!-- Loyal Fans Area -->
       <div class="teams" id="loyalfans">
-        <h2 id="lfname" class="teamnames">Purple</h2>
+        <h2 id="lfname">Purple</h2>
         <h2 id="lfscore">0</h2>
-        <button id="red+1" onclick="score(1,'fans')">+1</button>
-        <button id="red+2" onclick="score(2,'fans')">+2</button>
-        <button id="red-1" onclick="score(-1,'fans')">-1</button>
-        <button id="red-2" onclick="score(-2,'fans')">-2</button>
+        <button id="right+1" onclick="score(1,'fans')">+1</button>
+        <button id="right+2" onclick="score(2,'fans')">+2</button>
+        <button id="right-1" onclick="score(-1,'fans')">-1</button>
+        <button id="right-2" onclick="score(-2,'fans')">-2</button>
         <br />
         <button onclick="changeName('fans')">Change Name</button>
       </div>

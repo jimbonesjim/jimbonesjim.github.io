@@ -30,7 +30,7 @@
 }
 
 #flex #LeftTeam {
-  background-color: blue;
+  background-color: #153259;
 }
 
 #flex #LeftTeam .leftButtons {
@@ -45,7 +45,7 @@
 }
 
 #flex #RightTeam {
-  background-color: red;
+  background-color: #b6202b;
 }
 
 #flex #RightTeam .rightButtons {
@@ -94,6 +94,7 @@
 
 #lfname {
   font-size: 2rem;
+  padding-top: 4.4%;
 }
 
 @media (max-width: 1400px) {
@@ -117,7 +118,7 @@
 #togglelf {
   position: absolute;
   top: 0;
-  height: 35px;
+  height: 4.4%;
   width: 4%;
   left: 48%;
 }
@@ -141,3 +142,4 @@
 button {
   color: black;
 }
+/*# sourceMappingURL=main.css.map */

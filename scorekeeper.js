@@ -1,3 +1,4 @@
+//Team variables with team info
 let left = {
   name: "Mountain Bluebirds",
   color: "blue",
@@ -18,33 +19,17 @@ let fans = {
   toggle: "t",
 };
 
-//Loads or makes the local storage
-window.onload = function () {
-  if (
-    localStorage.getItem("leftSave") &&
-    localStorage.getItem("rightSave") &&
-    localStorage.getItem("fanSave")
-  ) {
-    left = JSON.parse(localStorage.getItem("leftSave"));
-    right = JSON.parse(localStorage.getItem("rightSave"));
-    fans = JSON.parse(localStorage.getItem("fanSave"));
-    console.log("Loaded saved variables from localStorage.");
-  }
-  document.getElementById("bluescore").innerHTML = left.score;
-  document.getElementById("redscore").innerHTML = right.score;
-  document.getElementById("bluename").innerHTML = left.name;
-  document.getElementById("redname").innerHTML = right.name;
-  document.getElementById("lfname").innerHTML = fans.name;
-  document.getElementById("lfscore").innerHTML = fans.score;
-  document.getElementById("btscore").innerHTML = left.things;
-  document.getElementById("rtscore").innerHTML = right.things;
-  somethingLF();
-  save();
-  changeColor("left", left.color);
-  changeColor("right", right.color);
-  console.log("Finished starting.");
-};
+//DOM variables
+const leftScoreEl = document.getElementById("leftscore");
+const rightScoreEl = document.getElementById("rightscore");
+const fansScoreEl = document.getElementById("lfscore");
+const leftNameEl = document.getElementById("leftname");
+const rightNameEl = document.getElementById("rightname");
+const fansNameEl = document.getElementById("lfname");
+const leftThingsEl = document.getElementById("ltscore");
+const rightThingsEl = document.getElementById("rtscore");
 
+// Localstorage save and load functions
 function save() {
   localStorage.setItem("leftSave", JSON.stringify(left));
   localStorage.setItem("rightSave", JSON.stringify(right));
@@ -52,10 +37,40 @@ function save() {
   console.log("saved");
 }
 
+function load() {
+  left = JSON.parse(localStorage.getItem("leftSave"));
+  right = JSON.parse(localStorage.getItem("rightSave"));
+  fans = JSON.parse(localStorage.getItem("fanSave"));
+  console.log("Loaded saved variables from localStorage.");
+}
+
+//Loads or makes the local storage
+window.onload = function () {
+  if (
+    localStorage.getItem("leftSave") &&
+    localStorage.getItem("rightSave") &&
+    localStorage.getItem("fanSave")
+  ) {
+    load();
+  }
+  leftScoreEl.innerHTML = left.score;
+  rightScoreEl.innerHTML = right.score;
+  leftNameEl.innerHTML = left.name;
+  rightNameEl.innerHTML = right.name;
+  fansNameEl.innerHTML = fans.name;
+  fansScoreEl.innerHTML = fans.score;
+  leftThingsEl.innerHTML = left.things;
+  rightThingsEl.innerHTML = right.things;
+  somethingLF();
+  save();
+  changeColor("left", left.color);
+  changeColor("right", right.color);
+  console.log("Finished starting.");
+};
 //adds and removes points to teams
 function score(num, team) {
   if (num === "?") {
-    var n = prompt("points to " + team + " team", "10");
+    const n = prompt("points to " + team + " team", "10");
     if (isNaN(n) || n === "" || n == " " || n === null) {
       return;
     }
@@ -63,19 +78,19 @@ function score(num, team) {
   }
   if (team === "left") {
     left.score = Number(left.score) + num;
-    document.getElementById("bluescore").innerHTML = left.score;
+    leftScoreEl.innerHTML = left.score;
   } else if (team === "right") {
     right.score = Number(right.score) + num;
-    document.getElementById("redscore").innerHTML = right.score;
+    rightScoreEl.innerHTML = right.score;
   } else if (team === "fans") {
     fans.score = Number(fans.score) + num;
-    document.getElementById("lfscore").innerHTML = fans.score;
+    fansScoreEl.innerHTML = fans.score;
   } else if (team === "lt") {
     left.things = Number(left.things) + num;
-    document.getElementById("btscore").innerHTML = left.things;
+    leftThingsEl.innerHTML = left.things;
   } else if (team === "rt") {
     right.things = Number(right.things) + num;
-    document.getElementById("rtscore").innerHTML = right.things;
+    rightThingsEl.innerHTML = right.things;
   } else {
     alert("An error occurred while trying to add a score.");
     console.log("An error occurred while trying to add a score.");
@@ -95,16 +110,14 @@ function resetScore(team) {
     confirm("Do you really want to reset the score for the " + team + " team")
   ) {
     if (team === "left") {
-      left.score = 0;
-      document.getElementById("bluescore").innerHTML = left.score;
-      left.things = 0;
-      document.getElementById("btscore").innerHTML = left.things;
+      left.score = left.things = 0;
+      leftScoreEl.innerHTML = left.score;
+      leftThingsEl.innerHTML = left.things;
       save();
     } else if (team === "right") {
-      right.score = 0;
-      document.getElementById("redscore").innerHTML = right.score;
-      right.things = 0;
-      document.getElementById("rtscore").innerHTML = right.things;
+      right.score = right.things = 0;
+      rightScoreEl.innerHTML = right.score;
+      rightThingsEl.innerHTML = right.things;
       save();
     } else if (team === "all") {
       localStorage.clear();
@@ -116,17 +129,18 @@ function resetScore(team) {
   console.log("reset the " + team + " team's score and name.");
 }
 
+let fansEl = document.getElementById("loyalfans");
+let fansToggleEl = document.getElementById("togglelf");
+
 //Toggle the Loyal Fan div to hide or show
 function toggleLF() {
-  var x = document.getElementById("loyalfans");
-  var z = document.getElementById("togglelf");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    z.innerHTML = "Hide";
+  if (fansEl.style.display === "none") {
+    fansEl.style.display = "block";
+    fansToggleEl.innerHTML = "Hide";
     fans.toggle = "t";
   } else {
-    x.style.display = "none";
-    z.innerHTML = "Show";
+    fansEl.style.display = "none";
+    fansToggleEl.innerHTML = "Show";
     fans.toggle = "f";
   }
   console.log("Toggled showing Loyal Fan area.");
@@ -134,28 +148,26 @@ function toggleLF() {
 }
 
 function somethingLF() {
-  var x = document.getElementById("loyalfans");
-  var z = document.getElementById("togglelf");
   if (fans.toggle === "f") {
-    x.style.display = "none";
-    z.innerHTML = "Show";
+    fansEl.style.display = "none";
+    fansToggleEl.innerHTML = "Show";
   }
 }
 
 //Toggle between 6 things and other things scoring
 function switchShow() {
-  let bt = document.getElementById("BT");
-  let b6 = document.getElementById("B6");
+  var lt = document.getElementById("LT");
+  var l6 = document.getElementById("L6");
   var rt = document.getElementById("RT");
   var r6 = document.getElementById("R6");
   var b = document.getElementById("otherthings");
-  if (bt.style.display === "none" && rt.style.display === "none") {
-    b6.style.display = r6.style.display = "none";
-    bt.style.display = rt.style.display = "block";
+  if (lt.style.display === "none" && rt.style.display === "none") {
+    l6.style.display = r6.style.display = "none";
+    lt.style.display = rt.style.display = "block";
     b.innerHTML = "6 Things";
   } else {
-    b6.style.display = r6.style.display = "block";
-    bt.style.display = rt.style.display = "none";
+    l6.style.display = r6.style.display = "block";
+    lt.style.display = rt.style.display = "none";
     b.innerHTML = "Other Things";
   }
   console.log("Toggled between showing the 6 things or other things scoring.");
@@ -165,16 +177,16 @@ function switchShow() {
 //changes the name for the teams
 function changeName(team) {
   if (team == "left") {
-    var btn = prompt("Set left Team Name", "Mountain Bluebirds");
-    if (btn === null) {
+    var ltn = prompt("Set left Team Name", "Mountain Bluebirds");
+    if (ltn === null) {
       return;
     }
-    if (btn === "") {
+    if (ltn === "") {
       left.name = "Left";
     } else {
-      left.name = btn;
+      left.name = ltn;
     }
-    document.getElementById("bluename").innerHTML = left.name;
+    leftNameEl.innerHTML = left.name;
     console.log("Changed the " + team + " name to " + left.name);
   } else if (team == "right") {
     var rtn = prompt("Set right Team Name", "Boise Spuds");
@@ -186,7 +198,7 @@ function changeName(team) {
     } else {
       right.name = rtn;
     }
-    document.getElementById("redname").innerHTML = right.name;
+    rightNameEl.innerHTML = right.name;
     console.log("Changed the " + team + " name to " + right.name);
   } else if (team == "fans") {
     var lftn = prompt("Set fans Team Name", "Loyal Fans");
@@ -198,44 +210,60 @@ function changeName(team) {
     } else {
       fans.name = lftn;
     }
-    document.getElementById("lfname").innerHTML = fans.name;
+    fansNameEl.innerHTML = fans.name;
     console.log("Changed the " + team + " name to " + fans.name);
   }
   save();
+}
+
+//checks if a color is valid
+function isColor(strColor) {
+  let s = new Option().style;
+  s.color = strColor;
+  return s.color == strColor;
+}
+
+function getColor(team, suggested) {
+  let color = prompt(
+    "What Color would you like the " + team + " team to be",
+    suggested
+  );
+  if (!isColor(color)) {
+    alert(color + " is not a color!");
+    color = getColor(team, suggested);
+    return color;
+  } else {
+    return color;
+  }
+}
+
+function blackorwhite(team, color) {
+  let element = document.getElementById(team);
+  if (color.toLowerCase() == "white" || color.toLowerCase() == "pink") {
+    element.style.color = "black";
+  } else {
+    element.style.color = "white";
+  }
 }
 
 //changes the color for the teams
 function changeColor(team, color) {
   if (team == "left") {
     if (color == "?") {
-      color = prompt(
-        "What Color would you like the " + team + " team to be",
-        "blue"
-      );
+      color = getColor(team, "blue");
     } else {
       color = left.color;
     }
-    if (color == "White" || color == "white") {
-      document.getElementById("LeftTeam").style.color = "Black";
-    } else {
-      document.getElementById("LeftTeam").style.color = "White";
-    }
+    blackorwhite("LeftTeam", color);
     document.getElementById("LeftTeam").style.backgroundColor = color;
     left.color = color;
   } else if (team == "right") {
     if (color == "?") {
-      color = prompt(
-        "What Color would you like the " + team + " team to be",
-        "red"
-      );
+      color = getColor(team, "red");
     } else {
       color = right.color;
     }
-    if (color == "White" || color == "white") {
-      document.getElementById("RightTeam").style.color = "Black";
-    } else {
-      document.getElementById("RightTeam").style.color = "White";
-    }
+    blackorwhite("RightTeam", color);
     document.getElementById("RightTeam").style.backgroundColor = color;
     right.color = color;
   }

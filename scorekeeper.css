@@ -11,15 +11,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   width: 100%;
   margin: 0 auto;
 }
@@ -86,10 +86,10 @@
   zoom: 1.5;
   background: purple;
   opacity: 0.85;
-  width:25%;
+  width: 25%;
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 37.5%;
 }
 
 #lfname {

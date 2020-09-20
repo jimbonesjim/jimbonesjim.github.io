@@ -4,6 +4,7 @@ let left = {
   color: "blue",
   score: 0,
   things: 0,
+  six: [false, false, false, false, false, false],
 };
 
 let right = {
@@ -11,6 +12,7 @@ let right = {
   color: "red",
   score: 0,
   things: 0,
+  six: [false, false, false, false, false, false],
 };
 
 let fans = {
@@ -28,6 +30,23 @@ const rightNameEl = document.getElementById("rightname");
 const fansNameEl = document.getElementById("lfname");
 const leftThingsEl = document.getElementById("ltscore");
 const rightThingsEl = document.getElementById("rtscore");
+const leftChecksEls = document.querySelectorAll(".leftChecks");
+const rightChecksEls = document.querySelectorAll(".rightChecks");
+
+//Adds event listener to left team checkboxes to save whenever a checkbox is clicked
+leftChecksEls.forEach((checkbox) => {
+  checkbox.addEventListener("click", () => {
+    left.six = checkedBoxs(leftChecksEls);
+    save();
+  });
+});
+
+rightChecksEls.forEach((checkbox) => {
+  checkbox.addEventListener("click", () => {
+    right.six = checkedBoxs(rightChecksEls);
+    save();
+  });
+});
 
 // Localstorage save and load functions
 function save() {
@@ -42,6 +61,15 @@ function load() {
   right = JSON.parse(localStorage.getItem("rightSave"));
   fans = JSON.parse(localStorage.getItem("fanSave"));
   console.log("Loaded saved variables from localStorage.");
+}
+
+//Checks which checkboxes are true/false
+function checkedBoxs(els) {
+  let checked = [];
+  els.forEach(function (i) {
+    checked.push(i.checked);
+  });
+  return checked;
 }
 
 //Loads or makes the local storage
@@ -61,6 +89,10 @@ window.onload = function () {
   fansScoreEl.innerHTML = fans.score;
   leftThingsEl.innerHTML = left.things;
   rightThingsEl.innerHTML = right.things;
+  for (let box = 0; box < 6; box++) {
+    leftChecksEls[box].checked = left.six[box];
+    rightChecksEls[box].checked = right.six[box];
+  }
   somethingLF();
   save();
   changeColor("left", left.color);

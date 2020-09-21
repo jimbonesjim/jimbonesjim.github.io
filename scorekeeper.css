@@ -86,10 +86,10 @@
   zoom: 1.5;
   background: purple;
   opacity: 0.85;
-  width: 25%;
+  width: 22%;
   position: absolute;
   top: 0;
-  left: 37.5%;
+  left: 39%;
 }
 
 #lfname {
@@ -140,5 +140,9 @@
 }
 
 button {
-  color: black;
+  background: #2f4f4f;
+  opacity: 0.84;
+  color: white;
+  border: none;
+  outline: none;
 }

@@ -187,23 +187,33 @@ function somethingLF() {
 }
 
 //Toggle between 6 things and other things scoring
+const lt = document.getElementById("LT");
+const rt = document.getElementById("RT");
+const r6 = document.getElementById("R6");
+const l6 = document.getElementById("L6");
+
 function switchShow() {
-  var lt = document.getElementById("LT");
-  var l6 = document.getElementById("L6");
-  var rt = document.getElementById("RT");
-  var r6 = document.getElementById("R6");
   var b = document.getElementById("otherthings");
   if (lt.style.display === "none" && rt.style.display === "none") {
     l6.style.display = r6.style.display = "none";
     lt.style.display = rt.style.display = "block";
+    left.toggle = "o";
     b.innerHTML = "6 Things";
   } else {
     l6.style.display = r6.style.display = "block";
     lt.style.display = rt.style.display = "none";
+    left.toggle = "6";
     b.innerHTML = "Other Things";
   }
   console.log("Toggled between showing the 6 things or other things scoring.");
   save();
+}
+
+function somethingThings() {
+  if (left.toggle === "o") {
+    l6.style.display = r6.style.display = "none";
+    lt.style.display = rt.style.display = "block";
+  }
 }
 
 //changes the name for the teams

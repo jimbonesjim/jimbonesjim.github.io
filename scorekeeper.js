@@ -94,6 +94,7 @@ window.onload = function () {
     rightChecksEls[box].checked = right.six[box];
   }
   somethingLF();
+  somethingThings();
   save();
   changeColor("left", left.color);
   changeColor("right", right.color);

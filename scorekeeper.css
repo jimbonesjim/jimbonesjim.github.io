@@ -146,3 +146,13 @@ button {
   border: none;
   outline: none;
 }
+
+button:hover {
+  background: #101a1a;
+  opacity: 0.99;
+}
+
+button:active {
+  background: #101a1a;
+  opacity: 0.99;
+}
